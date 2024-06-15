@@ -1,3 +1,3 @@
 title: Learn-to-Program
 description: Learn to code by learning how to attack problems, and how to apply Python skills.
-modules: ["setup", "content", "customize"]
+modules: ["Problem1", "setup", "content", "customize"]
