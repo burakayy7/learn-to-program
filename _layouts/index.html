@@ -39,15 +39,21 @@ layout: base
             background-color: #e22113;
             padding: 5px;
             color: white;
+		flex: 0 1 auto; /* Ensure it only takes necessary space */
         }
 	.top-section2 {
             background-color: #f17832;
             padding: 5px;
             color: white;
+		flex: 0 1 auto; /* Ensure it only takes necessary space */
         }
         .bottom-section {
             padding: 10px;
             background-color: white;
+		flex: 1 1 auto; /* Ensure it stretches to fill available space */
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
         .top-section h1, .top-section h2 {
@@ -62,6 +68,11 @@ layout: base
         .bottom-section p {
             margin: 0;
             color: #555;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 4; /* Number of lines to show */
+            -webkit-box-orient: vertical;
         }
     </style>
 
