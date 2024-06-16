@@ -1,6 +1,58 @@
 ---
 layout: base
 ---
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .article-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        article {
+            max-width: 800px;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        article:hover {
+            transform: scale(1.02);
+        }
+
+        .top-section {
+            background-color: #4CAF50;
+            padding: 20px;
+            color: white;
+        }
+
+        .bottom-section {
+            padding: 20px;
+            background-color: white;
+        }
+
+        .top-section h1, .top-section h2 {
+            margin: 0;
+        }
+
+        .top-section h2 {
+            font-weight: normal;
+            color: #e0e0e0;
+        }
+
+        .bottom-section p {
+            margin: 0;
+            color: #555;
+        }
+    </style>
 
 <!-- Banner -->
 <div class="jumbotron jumbotron-fluid">
@@ -18,10 +70,19 @@ layout: base
 	<div class="row">
 		<div class="col-lg-8 offset-lg-2">
 			<section>
-				<article class="post-card home-template"> 
-					<a href="/learn-to-program/modules/problem%201/The-Problem/">
-					</a>
-				</article>
+				<a href="destination-page.html" class="article-link">
+        <article>
+            <section class="top-section">
+                <header>
+                    <h1>Main Heading</h1>
+                    <h2>Subheading</h2>
+                </header>
+            </section>
+            <section class="bottom-section">
+                <p>This is a small description for the article. It provides some basic information about the content.</p>
+            </section>
+        </article>
+    </a>
 				{{ content }}
 			</section>
 		</div>
