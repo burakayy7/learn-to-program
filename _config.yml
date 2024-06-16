@@ -30,6 +30,6 @@ prose:
 # Set some personal styles and logo for your course
 # this is a hex value http://www.w3schools.com/tags/ref_colorpicker.asp
 jumbotron_color: "#58D7CB"
-jumbotron_image: "img/jumbotron-image.svg"
+jumbotron_image: "https://media.istockphoto.com/id/182465097/photo/html-code.jpg?s=612x612&w=0&k=20&c=qIHZW_srZNFHG5cjekli0-OSS4Yn9VIcmpYyW_cKpw0="
 # jumbotron_mask: "img/jumbotron-mask.svg"
 jumbotron_icon: "img/box-icon.png"
