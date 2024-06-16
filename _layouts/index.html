@@ -88,25 +88,47 @@ layout: base
             -webkit-line-clamp: 4; /* Number of lines to show */
             -webkit-box-orient: vertical;
         }
-	@media (max-width: 600px) {
+	@media (max-width: 900px) {
             .article-container {
-                grid-template-columns: 1fr; /* Single column on small screens */
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust for smaller screens */
             }
-            
+
             article {
                 height: auto; /* Let articles adjust height automatically */
             }
-            
+
             .top-section {
                 height: auto; /* Let the top section adjust height automatically */
             }
-            
+
             .bottom-section {
-                margin-top: 0; /* Remove margin top on small screens */
+                margin-top: 0; /* Remove margin top on smaller screens */
             }
-            
+
             .bottom-section p {
-                -webkit-line-clamp: 2; /* Show fewer lines on small screens */
+                -webkit-line-clamp: 3; /* Show fewer lines on smaller screens */
+            }
+        }
+
+        @media (max-width: 600px) {
+            .article-container {
+                grid-template-columns: 1fr; /* Single column on smallest screens */
+            }
+
+            article {
+                height: auto; /* Let articles adjust height automatically */
+            }
+
+            .top-section {
+                height: auto; /* Let the top section adjust height automatically */
+            }
+
+            .bottom-section {
+                margin-top: 0; /* Remove margin top on smallest screens */
+            }
+
+            .bottom-section p {
+                -webkit-line-clamp: 2; /* Show fewer lines on smallest screens */
             }
         }
     </style>
