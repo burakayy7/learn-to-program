@@ -8,7 +8,13 @@ layout: base
             margin: 0;
             padding: 10px;
         }
-
+	.article-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
         .article-link {
             text-decoration: none;
             color: inherit;
@@ -66,22 +72,38 @@ layout: base
 	</div>
 </div>
 
+
+<body>
+	<div class="article-container">
+		<a href="https://burakayy.com/learn-to-program/modules/problem%201/The-Problem/" class="article-link">
+        		<article>
+            			<section class="top-section">
+               				<header>
+                    				<h1>Problem 1</h1>
+                			</header>
+            			</section>
+            			<section class="bottom-section">
+                			<p>Learn the foundations and basics of Python, and how to apply them to problems.</p>
+           			</section>
+        		</article>
+   		</a>
+		<a href="https://burakayy.com/learn-to-program/modules/problem%201/The-Problem/" class="article-link">
+        		<article>
+            			<section class="top-section">
+               				<header>
+                    				<h1>Problem 1</h1>
+                			</header>
+            			</section>
+            			<section class="bottom-section">
+                			<p>Learn the foundations and basics of Python, and how to apply them to problems.</p>
+           			</section>
+        		</article>
+   		</a>
+</body>
 <div class="container">
 	<div class="row">
 		<div class="col-lg-8 offset-lg-2">
 			<section>
-				<a href="https://burakayy.com/learn-to-program/modules/problem%201/The-Problem/" class="article-link">
-        				<article>
-            					<section class="top-section">
-               						 <header>
-                    						<h1>Problem 1</h1>
-                					</header>
-            					</section>
-            					<section class="bottom-section">
-                					<p>Learn the foundations and basics of Python, and how to apply them to problems.</p>
-           					 </section>
-        				</article>
-   				</a>
 				{{ content }}
 			</section>
 		</div>
