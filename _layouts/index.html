@@ -26,11 +26,11 @@ layout: base
             overflow: hidden;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s;
-		flex: 1 1 400px;
+		/*flex: 1 1 400px;*/
             display: flex;
             flex-direction: column;
             height: 400px; /* Fixed height for articles */
-		position: relative; /* Ensure top section stays at the top */
+		/*position: relative; /* Ensure top section stays at the top */*/
         }
 
         article:hover {
@@ -41,14 +41,12 @@ layout: base
             background-color: #e22113;
             padding: 10px;
             color: white;
-		flex: 0 1 auto; /* Ensure it only takes necessary space */
-		overflow: hidden;
+		flex: 0 0 auto; /* Ensure it only takes necessary space */
 		display: flex;
 		height: 400px; /* Set a specific height */
 		align-items: center; /* Center content vertically */
             justify-content: center; /* Center content horizontally */
             top: 0;
-            width: 100%;
             box-sizing: border-box; /* Ensure padding is included in the width */
         }
 	.top-section2 {
