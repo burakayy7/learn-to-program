@@ -8,7 +8,7 @@ layout: base
             margin: 0;
             padding: 10px;
         }
-        .article-container {
+	.article-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
@@ -19,32 +19,49 @@ layout: base
             text-decoration: none;
             color: inherit;
         }
+
         article {
             border: 1px solid #ddd;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s;
+		/*flex: 1 1 400px;*/
             display: flex;
             flex-direction: column;
             height: 400px; /* Fixed height for articles */
+		/*position: relative; /* Ensure top section stays at the top */*/
         }
+
         article:hover {
             transform: scale(1.02);
         }
-        .top-section1, .top-section2 {
+
+        .top-section1 {
             background-color: #e22113;
             padding: 10px;
             color: white;
-            flex: 0 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 150px; /* Adjust this height as needed */
+		flex: 0 0 auto; /* Ensure it only takes necessary space */
+		display: flex;
+		height: 150px; /* Set a specific height */
+		align-items: center; /* Center content vertically */
+            justify-content: center; /* Center content horizontally */
+            top: 0;
             box-sizing: border-box; /* Ensure padding is included in the width */
         }
-        .top-section2 {
+	.top-section2 {
             background-color: #f17832;
+            padding: 10px;
+            color: white;
+		flex: 0 1 auto; /* Ensure it only takes necessary space */
+		overflow: hidden;
+		display: flex;
+		height: 150px; /* Set a specific height */
+		align-items: center; /* Center content vertically */
+            justify-content: center; /* Center content horizontally */
+            top: 0;
+            width: 100%;
+            box-sizing: border-box; /* Ensure padding is included in the width */
         }
         .bottom-section {
             padding: 10px;
@@ -54,9 +71,16 @@ layout: base
             display: flex;
             flex-direction: column;
         }
-        .top-section1 h1, .top-section2 h1 {
+
+        .top-section h1, .top-section h2 {
             margin: 0;
         }
+
+        .top-section h2 {
+            font-weight: normal;
+            color: #e0e0e0;
+        }
+
         .bottom-section p {
             margin: 0;
             color: #555;
@@ -66,77 +90,102 @@ layout: base
             -webkit-line-clamp: 4; /* Number of lines to show */
             -webkit-box-orient: vertical;
         }
-        @media (max-width: 900px) {
+	@media (max-width: 900px) {
             .article-container {
                 grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust for smaller screens */
             }
+
             article {
                 height: auto; /* Let articles adjust height automatically */
             }
-            .top-section1, .top-section2 {
+
+            .top-section1 {
                 height: auto; /* Let the top section adjust height automatically */
             }
+	    .top-section2 {
+                height: auto; /* Let the top section adjust height automatically */
+            }
+		
+            .bottom-section {
+                margin-top: 0; /* Remove margin top on smaller screens */
+            }
+
             .bottom-section p {
                 -webkit-line-clamp: 3; /* Show fewer lines on smaller screens */
             }
         }
+
         @media (max-width: 600px) {
             .article-container {
                 grid-template-columns: 1fr; /* Single column on smallest screens */
             }
+
             article {
                 height: auto; /* Let articles adjust height automatically */
             }
-            .top-section1, .top-section2 {
+
+            .top-section1 {
                 height: auto; /* Let the top section adjust height automatically */
             }
+	   .top-section2 {
+                height: auto; /* Let the top section adjust height automatically */
+            }
+
+            .bottom-section {
+                margin-top: 0; /* Remove margin top on smallest screens */
+            }
+
             .bottom-section p {
                 -webkit-line-clamp: 2; /* Show fewer lines on smallest screens */
             }
         }
     </style>
-</head>
-<body>
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container text-center">
-            <h1>{{ site.data.course.title }}</h1>
-            <p class="lead">{{site.data.course.description}}</p>
-        </div>
-    </div>
-    <div class="article-container">
-        <a href="https://burakayy.com/learn-to-program/modules/problem%201/The-Problem/" class="article-link">
-            <article>
-                <section class="top-section1">
-                    <header>
-                        <h1>Problem 1</h1>
-                    </header>
-                </section>
-                <section class="bottom-section">
-                    <p>Learn the foundations and basics of Python, and how to apply them to problems.</p>
-                </section>
-            </article>
-        </a>
-        <a href="https://burakayy.com/learn-to-program/modules/problem%201/The-Problem/" class="article-link">
-            <article>
-                <section class="top-section2">
-                    <header>
-                        <h1>Problem 2</h1>
-                    </header>
-                </section>
-                <section class="bottom-section">
-                    <p>Learn a bit more advanced Pythonic programming tricks that can be applied in Problems.</p>
-                </section>
-            </article>
-        </a>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2">
-                <section>
-                    {{ content }}
-                </section>
-            </div>
-        </div>
-    </div>
-</body>
 
+<!-- Banner -->
+<div class="jumbotron jumbotron-fluid">
+	<div class="container text-center">
+		{% if site.jumbotron_icon %}
+		<img src="{{ site.baseurl }}/{{ site.jumbotron_icon }}" alt="{{ site.title }} Icon" />
+		{% endif %}
+		<h1>{{ site.data.course.title }}</h1>
+    <p class="lead">{{site.data.course.description}}</p>
+
+	</div>
+</div>
+
+
+	<div class="article-container">
+		<a href="https://burakayy.com/learn-to-program/modules/problem%201/The-Problem/" class="article-link">
+        		<article>
+            			<section class="top-section1">
+               				<header>
+                    				<h1>Problem 1</h1>
+                			</header>
+            			</section>
+            			<section class="bottom-section">
+                			<p>Learn the foundations and basics of Python, and how to apply them to problems.</p>
+           			</section>
+        		</article>
+   		</a>
+		<a href="https://burakayy.com/learn-to-program/modules/problem%201/The-Problem/" class="article-link">
+        		<article>
+            			<section class="top-section2">
+               				<header>
+                    				<h1>Problem 2</h1>
+                			</header>
+            			</section>
+            			<section class="bottom-section">
+                			<p>Learn a bit more advanced Pythonic programming tricks that can be applied in Problems.</p>
+           			</section>
+        		</article>
+   		</a>
+	</div>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 offset-lg-2">
+			<section>
+				{{ content }}
+			</section>
+		</div>
+	</div>
+</div>
